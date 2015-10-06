@@ -6,7 +6,7 @@ var ClockWidget = React.createClass({
   },
 
   componentDidMount: function(){
-    this.clock = setInterval(this._tick, 2000);
+    this.clock = setInterval(this._tick, 1000);
   },
 
   componentWillUnmount: function(){
@@ -62,7 +62,7 @@ var WeatherWidget = React.createClass({
   },
 
   render: function() {
-    return <div>{this.state.temperature.toString()}</div>;
+    return <div>{((this.state.temperature * 9/5) - 459.67).toFixed(2).toString()} °F</div>;
   }
 
 });
